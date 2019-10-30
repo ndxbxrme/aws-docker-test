@@ -8,6 +8,8 @@ services:
     networks:
       - backend_net
     volumes:
-      - data:data
+      - data:/home/ubuntu/aws-docker-test/data
+volumes:
+  data:
 networks:
   backend_net:
