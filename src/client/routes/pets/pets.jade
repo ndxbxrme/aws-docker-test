@@ -1,0 +1,6 @@
+include ../../mixins/form.jade
+.pets-route 
+  h1 {{ m('pets-heading') }}
+  button(ui-sref='pet({_id:""})') {{ m('pets-button-new') }}
+  .pet(ng-repeat='pet in pets.items', ui-sref='pet({_id:pet._id})') {{ pet.name }}
+  pagination(ng-model='pets.args.page', total='pets.total', page-size='pets.args.pageSize')

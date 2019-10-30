@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  web: 
+    image: aws-docker-test:latest
+    ports:
+      - "80:4444"
+    networks:
+      - backend_net
+networks:
+  backend_net:

@@ -1,0 +1,6 @@
+include ../../mixins/form.jade
+.pet-route 
+  h1 {{ m('pet-heading') }}
+  +form({data:'pet'})
+    +input({name:'name'})
+    +controls()
