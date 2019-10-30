@@ -3,7 +3,8 @@ RUN apk add --update nodejs npm git
 
 WORKDIR /
 COPY package.json bower.json Gruntfile.coffee /
-RUN mkdir /data && mkdir /backup && mkdir /logs && mkdir /uploads
+RUN mkdir /backup && mkdir /logs && mkdir /uploads
+VOLUME data
 RUN npm install
 RUN npm install -g bower grunt-cli
 RUN bower install --allow-root
