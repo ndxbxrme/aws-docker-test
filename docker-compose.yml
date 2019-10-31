@@ -8,8 +8,6 @@ services:
     networks:
       - backend_net
     volumes:
-      - data:/home/ubunutu/aws-docker-test/data
-volumes:
-  data:
+      - /data:/data
 networks:
   backend_net:
