@@ -8,11 +8,11 @@ VOLUME data
 RUN npm install
 RUN npm install -g bower grunt-cli
 RUN bower install --allow-root
+COPY src/ /src
+RUN grunt build
 RUN npm install -g modclean
 RUN modclean -r -n default:safe,default:caution
 RUN npm uninstall -g modclean
-COPY src/ /src
-RUN grunt build
 RUN rm -rf bower_components/
 
 ENV NODE_ENV=production
