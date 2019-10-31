@@ -3,14 +3,12 @@ version: '3'
 services:
   web: 
     image: aws-docker-test:latest
-    command: gunicorn aws-docker-test.wsgi:application --reload --bind 0.0.0.0:8000
     ports:
       - "80:4444"
     networks:
       - backend_net
     volumes:
-      - ./app/:/usr/src/app/
-      - data:/usr/src/app/data
+      - data:/home/ubunutu/aws-docker-test/data
 volumes:
   data:
 networks:
